@@ -45,13 +45,13 @@ contract Auction {
     }
 
     function withdraw() external payable returns (bool) {
-        uint bid = pendingReturns[msg.sender];
+        uint bidAmount = pendingReturns[msg.sender];
 
-        if (bid > 0) {
+        if (bidAmount > 0) {
             pendingReturns[msg.sender] = 0;
 
-            if (!payable(msg.sender).send(bid)) {
-                pendingReturns[msg.sender] = bid;
+            if (!payable(msg.sender).send(bidAmount)) {
+                pendingReturns[msg.sender] = bidAmount;
                 return false;
             }
         }
