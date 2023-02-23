@@ -9,3 +9,8 @@ class customEnv(gym.Env):
     def __init__(self):
         super(customEnv, self).__init__()
 
+        # declare type and shape of action space
+        self.action_space = spaces.Discrete(5)
+
+    # def stop(self):
+
