@@ -20,7 +20,7 @@ with open(compiledContractPath) as file:
 
 # Fetching deployed contract reference
 contract = web3.eth.contract(
-    address = deployedContractAddress, abi=contract_abi)
+    address=deployedContractAddress, abi=contract_abi)
 
 # Calling contract function (this is not persisted
 # to the blockchain)
